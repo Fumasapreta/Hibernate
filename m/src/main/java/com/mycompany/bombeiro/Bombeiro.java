@@ -86,5 +86,17 @@ public class Bombeiro {
     public void setGuerra(String guerra) {
         this.guerra = guerra;
     }
-        
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Bombeiro) {
+            Bombeiro aux = (Bombeiro)obj;
+            }
+            if((aux.getId().equals(this.id)) && (aux.getCpf().equals(this.cpf))) {
+            
+        }else {
+            return false;
+        }
+    }
 }
+
