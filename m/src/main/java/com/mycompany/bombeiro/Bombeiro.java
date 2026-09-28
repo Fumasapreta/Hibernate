@@ -4,17 +4,30 @@
  */
 package com.mycompany.bombeiro;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.time.LocalDate;
 /**
  *
  * @author aluno
  */
+@Entity
+@Table(name="Bombeiro")
 public class Bombeiro {
-    
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
+    @Column(name="bom cpf", length = 11, nullable=true)
     private String cpf;
+    @Column(name="bom_data_nascimento", nullable=false)
     private LocalDate dataNascimento;
+    @Column(name="bom_nome_completo", length = 45, nullable=false)
     private String nomeCompleto;
+    @Column(name="bom_nome_guerra", length = 45, nullable=false)
     private String guerra;
 
     /**
@@ -91,12 +104,19 @@ public class Bombeiro {
     public boolean equals(Object obj) {
         if (obj instanceof Bombeiro) {
             Bombeiro aux = (Bombeiro)obj;
-            }
+            
             if((aux.getId().equals(this.id)) && (aux.getCpf().equals(this.cpf))) {
             
         }else {
             return false;
         }
     }
+        return false;
+    }
+ @Override
+ public int hashCode() {
+    return getClass().hashCode();
+    }
+
 }
 
