@@ -1,5 +1,5 @@
 <hibernate-configuration>
-<session-factory>
+    <session-factory>
 <!-- Configurações do Banco de Dados (MySQL) -->
 <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/NomedoEsquema</property>
@@ -12,5 +12,9 @@
 <property name="hibernate.format_sql">true</property>
 <!-- Cria/Atualiza as tabelas automaticamente no banco -->
 <property name="hibernate.hbm2ddl.auto">update</property>
-</session-factory>
+        <mapping class="com.mycompany.bombeiro.Bombeiro"/>
+        <mapping class="com.mycompany.viatura.Viatura"/>
+        <mapping class="com.mycompany.patente.Patente"/>
+        <mapping class="com.mycompany.especialidade.Especialidade"/>        
+    </session-factory>
 </hibernate-configuration>
